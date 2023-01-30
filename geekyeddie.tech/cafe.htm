@@ -1,0 +1,786 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project-2</title>
+    <link rel="stylesheet" href="Trial2.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto&display=swap"
+      rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+      <style>
+        html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+body {
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.img {
+  width: 100%;
+  height: 100%;
+  max-width: 150px;
+  max-height: 150px;
+  margin-bottom: 20px;
+}
+.img img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: -30px;
+  object-fit: cover;
+}
+
+nav {
+  font-size: 1.1em;
+  display: flex;
+  justify-content: space-between;
+  max-height: 5em;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 30px 0px;
+}
+ul,
+li {
+  display: inline;
+}
+a {
+  text-decoration: none;
+  list-style: none;
+  color: black;
+}
+.mid-links {
+  display: flex;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  max-width: 40%;
+  position: relative;
+  top: 20px;
+  /* margin-top: 40px; */
+}
+.mid-links ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-grow: 1;
+}
+#menu {
+  color: #f77f00;
+  border: 2px solid #f77f00;
+  padding: 8px 26px;
+}
+nav ul li a:hover {
+  color: #f77f00;
+  transition: ease 500ms;
+}
+#menu:hover {
+  color: white;
+  background-color: #f77f00;
+  transition: ease 220ms;
+}
+.end-links {
+  display: flex;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  max-width: 10%;
+  position: relative;
+  top: 20px;
+}
+.end-links ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  white-space: nowrap;
+}
+#signup {
+  color: #f77f00;
+}
+header {
+  box-shadow: 0px 0px 10px 1px;
+}
+.search-box {
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0px;
+  padding-left: 200px;
+  padding-right: 150px;
+  position: relative;
+  top: 250px;
+}
+.search-input {
+  /* background-color: blue; */
+  display: flex;
+  width: 100%;
+}
+.search-input input {
+  width: 100%;
+  display: flex;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  padding: 20px 0px 20px 20px;
+  background-color: rgb(100, 100, 100);
+  font-size: 16px;
+  font-weight: lighter;
+  color: white;
+  box-shadow: inset 1px 1px 15px 2px rgb(55, 55, 55);
+}
+.search-input input::placeholder {
+  color: rgb(200, 200, 200);
+  text-transform: capitalize;
+  word-spacing: 2px;
+}
+.search-btn {
+  width: 100%;
+  max-width: 45px;
+  display: flex;
+  align-items: center;
+  opacity: 1;
+
+  /* background-color: red; */
+}
+.search-btn button {
+  position: relative;
+  right: 55px;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  outline: none;
+  border: none;
+  border-radius: 100%;
+  padding: 8px 0px;
+  margin: auto;
+  box-shadow: 0px 0px 18px 0.5px;
+  cursor: pointer;
+}
+.search-btn button:active {
+  background-color: rgb(205, 205, 205);
+}
+.search-btn ion-icon {
+  color: orange;
+  font-weight: 900;
+  font-size: 26px;
+}
+
+.img-top {
+  display: flex;
+  position: relative;
+}
+.gradient-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 650px;
+  z-index: -1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center -90px;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.25) 0%,
+      rgba(0, 0, 0, 0.397) 50%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    url("https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80");
+}
+.top-heading {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  top: 260px;
+  opacity: 1;
+  justify-content: center;
+  align-items: center;
+}
+.top-heading h1 {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  font-size: 50px;
+  word-spacing: 20px;
+  text-align: center;
+  border-top: 3px solid #f77f00;
+  border-bottom: 3px solid #f77f00;
+  background-color: #0000005d;
+}
+.product-section-heading {
+  text-align: center;
+  font-family: "Poppins";
+  position: relative;
+  top: 400px;
+}
+.product-section-heading #productHeading {
+  text-transform: uppercase;
+  color: #f77f00;
+  font-size: 45px;
+  font-weight: 700;
+  
+}
+
+.product-section-heading #productSubHeading {
+  position: relative;
+  top: 25px;
+  font-size: 28px;
+  color: #5b5b5b;
+}
+
+.productContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  max-width: 1920px;
+  width: 100%;
+  flex-wrap: nowrap;
+  position: relative;
+  top: 550px;
+}
+.productImg img {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+}
+.img1 img {
+  object-position: center bottom;
+}
+.productInfo {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200px;
+  position: relative;
+}
+.productCards {
+  width: 100%;
+  max-width: 330px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.productName {
+  font-family: "Poppins";
+  font-weight: 700;
+  font-size: 22px;
+  text-transform: uppercase;
+  padding-bottom: 18px;
+  text-align: center;
+}
+.productDesc {
+  font-family: "Poppins";
+  color: #6e6e6e;
+  text-align: center;
+  padding-bottom: 12px;
+}
+.productPrice {
+  font-family: "Poppins";
+  font-weight: 700;
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+.productButton button {
+  font-family: "Poppins";
+  font-weight: 700;
+  color: #f77f00;
+  text-transform: uppercase;
+  min-height: 50px;
+  min-width: 190px;
+  border: 2px solid#f77f00;
+  position: relative;
+  top: 20px;
+}
+
+.productButton button:hover {
+  background-color: #f77f00;
+  color: white;
+  transition: ease-in-out 0.2s;
+}
+.coffeeBeans {
+  max-width: 80px;
+  max-height: 80px;
+  width: 100%;
+}
+.coffeeBeans img {
+  max-width: 70px;
+  max-height: 70px;
+  object-fit: cover;
+}
+.bean1 img {
+  position: relative;
+  top: 490px;
+  left: 1200px;
+  opacity: 1;
+  transform: rotate(-60deg) translateY(0px);
+  animation: floatingBean1 8s ease-in-out infinite;
+}
+.bean2 img {
+  position: relative;
+  top: 525px;
+  left: 350px;
+  opacity: 1;
+  transform: rotate(35deg) translateY(0px);
+
+  animation: floatingBean2 8s ease-in-out infinite;
+}
+@keyframes floatingBean1 {
+  0% {
+    transform: translateY(0px) rotate(-60deg);
+  }
+  50% {
+    transform: translateY(15px) rotate(-60deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(-60deg);
+  }
+}
+@keyframes floatingBean2 {
+  0% {
+    transform: translateY(0px) rotate(35deg);
+  }
+  50% {
+    transform: translateY(15px) rotate(35deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(35deg);
+  }
+}
+@media (max-width: 1350px) {
+  ul:nth-of-type(2) {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2em;
+  }
+  .end-links ul li {
+    margin-right: 20px;
+  }
+  .search-box {
+    padding-left: 120px;
+    padding-right: 40px;
+  }
+  .productImg img {
+    height: 250px;
+    width: 250px;
+  }
+  .productName {
+    font-size: 20px;
+  }
+  .productPrice {
+    font-size: 18px;
+  }
+  .bean1,
+  .bean2 {
+    position: relative;
+    right: 220px;
+  }
+}
+@media (max-width: 1100px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.1em;
+    transition: flex-direction ease 2s;
+  }
+  .gradient-img {
+    background-position: center center;
+    height: 500px;
+  }
+  header {
+    height: 350px;
+  }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: -35px;
+    padding: 0px 50px;
+    display: inline-block;
+    white-space: nowrap;
+  }
+  .mid-links {
+    top: 50px;
+  }
+  .mid-links ul li {
+    margin-bottom: 20px;
+  }
+  .end-links {
+    top: 80px;
+  }
+  .end-links ul li {
+    margin-bottom: 13px;
+    margin-right: 0px;
+  }
+  img {
+    margin-bottom: -120px;
+  }
+  .search-box {
+    padding-left: 60px;
+    padding-right: 20px;
+  }
+  .top-heading {
+    top: 150px;
+  }
+  .search-box {
+    top: 150px;
+  }
+  .gradient-img {
+    height: 500px;
+  }
+  .product-section-heading {
+    top: 350px;
+  }
+  .productName {
+    font-size: 28px;
+  }
+  .productDesc {
+    font-size: 18px;
+  }
+  .productPrice {
+    font-size: 24px;
+    padding-top: 10px;
+  }
+  .productButton button {
+    font-size: 16px;
+  }
+  .productContainer {
+    flex-direction: column;
+    top: 420px;
+  }
+  .productImg img {
+    height: 400px;
+    width: 400px;
+  }
+
+  .productInfo {
+    top: 120px;
+  }
+  .productCards {
+    padding-bottom: 150px;
+  }
+  .bean1,
+  .bean2 {
+    top: -200px;
+    left: -300px;
+  }
+  .bean2 {
+    top: -100px;
+  }
+}
+@media (max-width: 1000px) {
+  .bean1,
+  .bean2 {
+    opacity: 0;
+  }
+}
+@media (max-width: 800px) {
+  .search-box {
+    padding-left: 0px;
+    padding-right: 0px;
+    left: 20px;
+    top: 100px;
+  }
+  .top-heading {
+    top: 100px;
+  }
+  .top-heading h1 {
+    font-size: 34px;
+  }
+  .gradient-img {
+    background-position: center center;
+    height: 400px;
+  }
+  .search-input input {
+    padding: 16px 0px 16px 16px;
+  }
+
+  .search-btn ion-icon {
+    font-size: 22px;
+  }
+}
+
+      </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="img">
+          <img src="C:\Users\talib\Pictures\logo2.png" alt="Logo" />
+        </div>
+        <div class="mid-links">
+          <ul>
+            <li>
+              <a href="" id="menu">Menu</a>
+            </li>
+            <li>
+              <a href="">Contact</a>
+            </li>
+            <li><a href="">Locations</a></li>
+            <li>
+              <a href="">About</a>
+            </li>
+          </ul>
+        </div>
+        <div class="end-links">
+          <ul>
+            <li>
+              <a href="" id="signup">Sign Up</a>
+            </li>
+            <li><a href="">Login</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="top-section-container">
+      <div class="img-gradient">
+        <div class="img-top">
+          <div class="gradient-img"></div>
+        </div>
+      </div>
+      <div class="top-heading"><h1>relax. refresh. rejuvenate.</h1></div>
+      <div class="search-box">
+        <div class="search-input">
+          <input
+            type="search"
+            placeholder="Search our menu, locations, deals and more." />
+        </div>
+        <span class="search-btn">
+          <button><ion-icon name="search-sharp"></ion-icon></button>
+        </span>
+      </div>
+    </div>
+    <div class="product-section">
+      <div class="coffeeBeans bean1">
+        <img src="https://e7.pngegg.com/pngimages/731/313/png-clipart-roasted-coffee-bean-single-roasted-coffee-bean-food-coffee-thumbnail.png"
+  
+          alt="" />
+      </div>
+      <div class="coffeeBeans bean2">
+        <img
+          src="https://e7.pngegg.com/pngimages/731/313/png-clipart-roasted-coffee-bean-single-roasted-coffee-bean-food-coffee-thumbnail.png"
+          alt="" />
+      </div>
+
+      <div class="product-section-heading">
+        <p id="productHeading">Check out our sundaes</p>
+        <p id="productSubHeading">Available in-store & online</p>
+      </div>
+      <div class="productContainer">
+        <div class="productCards card1">
+          <div class="productImg img1">
+            <img
+              src="https://layers.pk/wp-content/uploads/2021/11/lotus-sundae.jpg"
+              alt="" />
+          </div>
+          <div class="productInfo">
+            <div class="productName"><p>Lotus Sundae</p></div>
+            <div class="productDesc">
+              <p>Caramel with rock salt topped over brownie, Crème...</p>
+            </div>
+            <div class="productPrice"><p>$1.49</p></div>
+            <div class="productButton">
+              <button type="">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="productCards card2">
+          <div class="productImg img2">
+            <img
+              src="https://layers.pk/wp-content/uploads/2021/11/salted-caramel-sundae.jpg"
+              alt="" />
+          </div>
+          <div class="productInfo">
+            <div class="productName"><p>Caramel Sundae</p></div>
+            <div class="productDesc">
+              <p>Caramel with rock salt topped over brownie, Crème...</p>
+            </div>
+            <div class="productPrice"><p>$1.49</p></div>
+            <div class="productButton">
+              <button type="">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="productCards card3">
+          <div class="productImg img3">
+            <img
+              src="https://layers.pk/wp-content/uploads/2021/11/galaxy-sundae.jpg"
+              alt="" />
+          </div>
+          <div class="productInfo">
+            <div class="productName"><p>Galaxy Sundae</p></div>
+            <div class="productDesc">
+              <p>Oreo fudge brownie, Crème cheese, Short bread biscuits...</p>
+            </div>
+            <div class="productPrice"><p>$1.49</p></div>
+            <div class="productButton">
+              <button type="">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="productCards card4">
+          <div class="productImg img4">
+            <img
+              src="https://layers.pk/wp-content/uploads/2021/11/nutella-sundae.jpg"
+              alt="" />
+          </div>
+          <div class="productInfo">
+            <div class="productName"><p>Nutella Sundae</p></div>
+            <div class="productDesc">
+              <p>Roasted nuts topped over super moist brownie, Crème...</p>
+            </div>
+            <div class="productPrice"><p>$1.49</p></div>
+            <div class="productButton">
+              <button type="">Add to cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  </body>
+</html>

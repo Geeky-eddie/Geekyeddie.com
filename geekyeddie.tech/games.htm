@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio-example</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+body {
+    margin: 0;
+    background: #fef9ef;
+}
+* {
+    border-radius: 10px;
+    font-family: "Concert One", cursive;
+}
+.itt {
+    width: 90px;
+    height: 90px;
+    margin: 3px;
+    background-position: center;
+    background-size: 70px;
+    background-repeat: no-repeat;
+    transition: 200ms;
+    transform: translateZ(20px);
+}
+#game {
+    width: 290px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: 50px;
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2aWV3Qm94PSIwIDAgNTExLjE0ODUyOSA1MTEuMTQ4NTI5IiB3aWR0aD0iNTExLjE0ODUyOSIgaGVpZ2h0PSI1MTEuMTQ4NTI5IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxyZWN0IHg9IjE1Ny45NTY1NjIiIHdpZHRoPSIxMi44MTExOTQiIGhlaWdodD0iNTExLjE0ODQ5OSIgc3R5bGU9ImZpbGw6IHJnYigzNCwgMTI0LCAxNTcpOyIgeT0iMC4wMDAwMjMiIHJ4PSI2LjQwNTU5NyIgcnk9IjYuNDA1NTk3Ii8+CiAgPHJlY3QgeD0iMzQwLjM4MDc3MiIgd2lkdGg9IjEyLjgxMTE5NCIgaGVpZ2h0PSI1MTEuMTQ4NDk5IiBzdHlsZT0iZmlsbDogcmdiKDM0LCAxMjQsIDE1Nyk7IiB5PSIwLjAwMDAwOCIgcng9IjYuNDA1NTk3IiByeT0iNi40MDU1OTciLz4KICA8cmVjdCB4PSIxNTcuOTU2NTU4IiB3aWR0aD0iMTIuODExMTk0IiBoZWlnaHQ9IjUxMS4xNDg0OTkiIHN0eWxlPSJmaWxsOiByZ2IoMzQsIDEyNCwgMTU3KTsiIHk9IjAuMDAwMDIzIiB0cmFuc2Zvcm09Im1hdHJpeCgwLCAtMSwgMSwgMCwgMCwgNTExLjE0ODUyOSkiIHJ4PSI2LjQwNTU5NyIgcnk9IjYuNDA1NTk3Ii8+CiAgPHJlY3QgeD0iMzQwLjM4MDc2OCIgd2lkdGg9IjEyLjgxMTE5NCIgaGVpZ2h0PSI1MTEuMTQ4NDk5IiBzdHlsZT0iZmlsbDogcmdiKDM0LCAxMjQsIDE1Nyk7IiB5PSIwLjAwMDAwOCIgdHJhbnNmb3JtPSJtYXRyaXgoMCwgLTEsIDEsIDAsIDAsIDUxMS4xNDg1MjkpIiByeD0iNi40MDU1OTciIHJ5PSI2LjQwNTU5NyIvPgo8L3N2Zz4=");
+    background-size: 285px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform-style: preserve-3d;
+}
+#ps {
+    display: flex;
+    justify-content: space-between;
+    color: #227c9d;
+    background: #20da29;
+    margin: 0;
+    padding: 4px;
+    border-radius: 0 0 10px 10px;
+}
+.player {
+    display: flex;
+    align-items: center;
+    background: #fef9ef;
+    padding: 5px;
+}
+.name {
+    margin: 5px;
+}
+.points {
+    padding: 9px 10px;
+    font-size: 20px;
+    background: #20da29;
+}
+#pointsP1 {
+    margin-left: 15px;
+}
+#pointsP2 {
+    margin-right: 15px;
+}
+.wall {
+    background-image: url();
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+#p1 {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2aWV3Qm94PSIwIDAgNTAwIDUwMCIgd2lkdGg9IjUwMCIgaGVpZ2h0PSI1MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGVsbGlwc2Ugc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZS13aWR0aDogNTBweDsgc3Ryb2tlOiByZ2IoMjMsIDE5NSwgMTc4KTsiIGN4PSIyNTAiIGN5PSIyNTAiIHJ4PSIyMTIuODE2NzU3IiByeT0iMjEyLjgxNjc1NyIvPgo8L3N2Zz4=);
+}
+#p2 {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2aWV3Qm94PSIwIDAgNTAwIDUwMCIgd2lkdGg9IjUwMCIgaGVpZ2h0PSI1MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHJlY3QgeD0iMjI0LjUwODI4NSIgd2lkdGg9IjUwLjk4MzQ1OSIgaGVpZ2h0PSI1MDAuMDAwMDM0IiBzdHlsZT0iZmlsbDogcmdiKDI1NCwgMTA5LCAxMTUpOyIgcng9IjI1LjQ5MTcyOCIgcnk9IjI1LjQ5MTcyOCIgdHJhbnNmb3JtPSJtYXRyaXgoMC43MDcxMDcsIDAuNzA3MTA3LCAtMC43MDcxMDcsIDAuNzA3MTA3LCAyNTAsIC0xMDMuNTUzMzgzKSIvPgogIDxyZWN0IHg9IjE5My41NTkzMDkiIHk9IjcyLjkwMzUxNiIgd2lkdGg9IjUwLjk4MzQ4MiIgaGVpZ2h0PSI1MDAuMDAwMjc4IiBzdHlsZT0iZmlsbDogcmdiKDI1NCwgMTA5LCAxMTUpOyIgcng9IjI1LjQ5MTcyOCIgcnk9IjI1LjQ5MTcyOCIgdHJhbnNmb3JtPSJtYXRyaXgoMC43MDcxMDcsIC0wLjcwNzEwNywgMC43MDcxMDcsIDAuNzA3MTA3LCAtMTMzLjIxOTgxOCwgMTc2LjU2NTEyNSkiLz4KPC9zdmc+);
+}
+#popup {
+    width: fit-content;
+    margin: auto;
+    position: absolute;
+    top: calc(50vh - 40px);
+    left: 0;
+    right: 0;
+    background: #20da29;
+    padding: 20px 120px;
+    opacity: 0%;
+    pointer-events: none;
+    transition: 200ms;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 5px #fef9ef;
+    outline: solid 5px #20da29;
+}
+#profile {
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    background-position: center;
+}
+#nm {
+    text-align: center;
+    font-size: 20px;
+    color: #227c9d;
+    text-transform: uppercase;
+    margin-top: 9px;
+}
+#all {
+    max-width: 730px;
+    margin: auto;
+}
+
+    </style>
+</head>
+<body>
+    <div id="ps">
+        <div id="player1" class="player">
+            <div class="wall" id="p1">
+    
+            </div>
+            <div class="name">player-1</div>
+            <div id="pointsP1" class="points">0</div>
+        </div>
+        <div id="player2" class="player">
+            <div id="pointsP2" class="points">0</div>
+            <div class="name">player-2</div>
+            <div class="wall" id="p2">
+    
+            </div>
+        </div>
+    </div>
+    
+    <div id="game">
+        <div class="itt" id="0"></div>
+        <div class="itt" id="1"></div>
+        <div class="itt" id="2"></div>
+        <div class="itt" id="3"></div>
+        <div class="itt" id="4"></div>
+        <div class="itt" id="5"></div>
+        <div class="itt" id="6"></div>
+        <div class="itt" id="7"></div>
+        <div class="itt" id="8"></div>
+    </div>
+    
+    <div id="popup">
+        <div id="profile"></div>
+        <div id="nm">player-1 Win</div>
+    </div>
+    <script>
+        let x =
+    "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2aWV3Qm94PSIwIDAgNTAwIDUwMCIgd2lkdGg9IjUwMCIgaGVpZ2h0PSI1MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHJlY3QgeD0iMjI0LjUwODI4NSIgd2lkdGg9IjUwLjk4MzQ1OSIgaGVpZ2h0PSI1MDAuMDAwMDM0IiBzdHlsZT0iZmlsbDogcmdiKDI1NCwgMTA5LCAxMTUpOyIgcng9IjI1LjQ5MTcyOCIgcnk9IjI1LjQ5MTcyOCIgdHJhbnNmb3JtPSJtYXRyaXgoMC43MDcxMDcsIDAuNzA3MTA3LCAtMC43MDcxMDcsIDAuNzA3MTA3LCAyNTAsIC0xMDMuNTUzMzgzKSIvPgogIDxyZWN0IHg9IjE5My41NTkzMDkiIHk9IjcyLjkwMzUxNiIgd2lkdGg9IjUwLjk4MzQ4MiIgaGVpZ2h0PSI1MDAuMDAwMjc4IiBzdHlsZT0iZmlsbDogcmdiKDI1NCwgMTA5LCAxMTUpOyIgcng9IjI1LjQ5MTcyOCIgcnk9IjI1LjQ5MTcyOCIgdHJhbnNmb3JtPSJtYXRyaXgoMC43MDcxMDcsIC0wLjcwNzEwNywgMC43MDcxMDcsIDAuNzA3MTA3LCAtMTMzLjIxOTgxOCwgMTc2LjU2NTEyNSkiLz4KPC9zdmc+";
+let o =
+    "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2aWV3Qm94PSIwIDAgNTAwIDUwMCIgd2lkdGg9IjUwMCIgaGVpZ2h0PSI1MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGVsbGlwc2Ugc3R5bGU9ImZpbGw6IG5vbmU7IHN0cm9rZS13aWR0aDogNTBweDsgc3Ryb2tlOiByZ2IoMjMsIDE5NSwgMTc4KTsiIGN4PSIyNTAiIGN5PSIyNTAiIHJ4PSIyMTIuODE2NzU3IiByeT0iMjEyLjgxNjc1NyIvPgo8L3N2Zz4=";
+
+let player = 0;
+
+let p1Points = 0;
+let p2Points = 0;
+let pos = [[], [], [], [], [], [], [], [], []];
+let object = document.getElementsByClassName("itt");
+
+for (let ind = 0; ind < object.length; ind++) {
+    object[ind].addEventListener("mousedown", () => {
+        inn(document.getElementById(object[ind].id));
+    });
+}
+
+function inn(ele) {
+    if (player == 0) {
+        if (ele.style.backgroundImage == "") {
+            ele.style.backgroundImage = `url(${o})`;
+            pos[ele.id][0] = player;
+            check(player);
+            player = 1;
+        }
+    } else if (player == 1) {
+        if (ele.style.backgroundImage == "") {
+            ele.style.backgroundImage = `url(${x})`;
+            pos[ele.id][0] = player;
+            check(player);
+            player = 0;
+        }
+    }
+}
+
+function check(player) {
+    if (
+        //  horizontal check
+        (pos[0][0] == player && pos[1][0] == player && pos[2][0] == player) ||
+        (pos[3][0] == player && pos[4][0] == player && pos[5][0] == player) ||
+        (pos[6][0] == player && pos[7][0] == player && pos[8][0] == player) ||
+        //  vertical check
+        (pos[0][0] == player && pos[3][0] == player && pos[6][0] == player) ||
+        (pos[1][0] == player && pos[4][0] == player && pos[7][0] == player) ||
+        (pos[2][0] == player && pos[5][0] == player && pos[8][0] == player) ||
+        //diagonal check
+        (pos[0][0] == player && pos[4][0] == player && pos[8][0] == player) ||
+        (pos[6][0] == player && pos[4][0] == player && pos[2][0] == player)
+    ) {
+        pos = [[], [], [], [], [], [], [], [], []];
+        setTimeout(() => {
+            ppp(player);
+            winer(player);
+            for (let ind = 0; ind < object.length; ind++) {
+                document.getElementById(ind).style.backgroundImage = "";
+            }
+        }, 100);
+    } else {
+        let pets = 0;
+        for (let ind = 0; ind < object.length; ind++) {
+            if (document.getElementById(ind).style.backgroundImage == "") {
+                pets += 1;
+            }
+        }
+        if (pets == 0) {
+            pos = [[], [], [], [], [], [], [], [], []];
+            setTimeout(() => {
+                tie();
+                for (let ind = 0; ind < object.length; ind++) {
+                    document.getElementById(ind).style.backgroundImage = "";
+                }
+            }, 100);
+        }
+    }
+}
+let pf = document.getElementById("profile");
+let popup = document.getElementById("popup");
+let nm = document.getElementById("nm");
+function winer(player) {
+    switch (player) {
+        case 0:
+            p1Points += 1;
+            document.getElementById("pointsP1").innerHTML = p1Points;
+            break;
+        case 1:
+            p2Points += 1;
+            document.getElementById("pointsP2").innerHTML = p2Points;
+            break;
+    }
+}
+
+function ppp(player) {
+    nm.innerHTML = `player-${player + 1} win`;
+    switch (player) {
+        case 0:
+            pf.style.backgroundImage = `url(${o})`;
+            break;
+        // ---------------------------------
+        case 1:
+            pf.style.backgroundImage = `url(${x})`;
+            break;
+    }
+    document.getElementById("game").style.pointerEvents = "none";
+    popup.style.opacity = "100%";
+    popup.style.pointerEvents = "normal";
+    setTimeout(() => {
+        popup.style.pointerEvents = "none";
+        popup.style.opacity = "0%";
+        document.getElementById("game").style.pointerEvents = "all";
+    }, 1000);
+}
+function tie() {
+    pf.style.backgroundImage = `url(https://cdn-icons-png.flaticon.com/512/4160/4160706.png)`;
+    nm.innerHTML = `A TIE`;
+    document.getElementById("game").style.pointerEvents = "none";
+    popup.style.opacity = "100%";
+    popup.style.pointerEvents = "all";
+    setTimeout(() => {
+        popup.style.pointerEvents = "none";
+        popup.style.opacity = "0%";
+        document.getElementById("game").style.pointerEvents = "all";
+    }, 1000);
+}
+VanillaTilt.init(document.querySelector("#game"), {
+    max: 15,
+    speed: 400,
+    glare: true,
+    maxGlare: 0.5,
+    perspective: 2000
+});
+
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    </body>
+    </html>
